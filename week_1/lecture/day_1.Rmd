@@ -1,0 +1,134 @@
+---
+pagetitle: Welcome to TDIS!
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: true
+    css: ./resources/css/custom_css.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+```
+
+# Welcome to COM 495/6/7!
+
+## Introductions
+
+## About Me
+
+<img class = 'fragment' src = './images/the_fam.jpg' style="width: 80%;"/>
+
+## Dad Joke
+
+- Why did the nearsighted man fall in the well?
+
+> - He couldn't see that well!
+
+# The Class
+
+## Goals
+
+> - Understand the role of narrative in interpreting and producing data analyses
+> - Competently import, process, and prepare data for analysis in R
+> - Produce beautiful, truthful visualizations in R
+> - Critically analyze data visualizations and presentations
+> - Craft compelling data presentations
+
+## Why learn data storytelling skills?
+
+<img class = 'fragment' src='https://en.wikipedia.org/wiki/Ignaz_Semmelweis#/media/File:Ignaz_Semmelweis_1860.jpg' style = 'width:80%;' />
+
+## Lots of reasons Semmelweis's findings were not accepted
+
+> - No real theory of how "corpse particles" actually caused disease
+> - Didn't fit in the "paradigm" of understanding
+> - Doctors had to accept that they were the cause of thousands of deaths
+
+## But he was also a bad data storyteller
+
+<img class = 'fragment' src='./images/semmelweis_table.jpg' style='width:80%;'/>
+
+## Data does not speak for itself
+
+
+<img class = 'fragment' src='./images/dykes_figure.png' style='width:80%;'/>
+
+<div class='footnote'>Image via [Brent Dykes](https://www.forbes.com/sites/brentdykes/2016/02/09/a-history-lesson-on-the-dangers-of-letting-data-speak-for-itself/?sh=6bbd7d9720e1)</div>
+
+## About the class
+
+> - Building a learning community
+> - Discussions vs. lectures
+> - Resolving confusion
+> - Applications
+
+
+## Discord Meetings
+
+> - Tuesdays are "required"
+> - Thursdays are typically more of a co-working time (but sometimes synchronous)
+> - Discussion questions due on Mondays (in Discord)
+> - Random cold calling based on questions
+>	- I will track whether you are prepared
+> - Think, pair, share
+
+## Grading
+
+> - Self-assessment
+>	- What are your goals?
+> - I will track your progress and provide feedback
+> - Four times you will discuss your progress and suggest the grade you are earning
+>	- I will let you know when/if I disagree
+
+## R
+
+> - For much of the class, homework will be R assignments instead of discussion questions
+> - Tuesday classes will review homework questions and confusions, Thursdays will be co-working
+> - Please ask and answer questions in Discord!
+
+## Exam
+
+> - One exam
+>	- Goal is to encourage self-accountability
+
+## Final Project
+
+> - Data presentation
+
+## Project Milestones
+
+> - Identify dataset
+> - Proposal
+> - Rough draft
+> - Each stage includes a round of peer feedback
+
+
+# Resources
+
+## Discord
+
+> - Conversation
+> - Class sessions
+> - Help
+>	- In general, ask publicly so others can answer / see the answer
+
+## Wiki
+
+> - Schedule
+> - Links to readings
+
+## Brightspace
+
+> - Readings
+> - Submit some assignments
+
+## Office Hours
+
+> - On Discord
+>	- 1-to-1 meetings on Friday 10-12
+>	- Sign up on the wiki
