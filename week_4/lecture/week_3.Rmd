@@ -1,0 +1,34 @@
+---
+title: "COM 495: Week 3"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ./resources/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+```
+
+## Dad Joke
+
+I got fired from my job at the calendar factory.
+
+Just because I took a day off.
+
+
+## Housekeeping
+
+> - Case study next week
+>	- No discussion questions
+> - Self assessment reflection
+>	- Goals for the class
+>	- Feedback for me
+> - More videos from me

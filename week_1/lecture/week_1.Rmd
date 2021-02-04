@@ -8,6 +8,7 @@ output:
     self_contained: false
     css: ./resources/custom_css.css
     reveal_plugins: ["notes"]
+    lib_dir: ../../libs
 ---
 
 ```{r setup, include=FALSE}
@@ -16,13 +17,22 @@ knitr::opts_knit$set(root.dir = './')
 source("resources/preamble.R")
 ```
 
-# Welcome to COM 495/6/7!
+# Welcome to COM 495/6/7: Turning Data into Insight and Stories
 
-## Introductions
 
 ## About Me
 
-<img class = 'fragment' src = './images/the_fam.jpg' style="width:50%;"/>
+<div class='container'>
+<div class='col fragment'>
+<img src='./images/the_fam.jpg'>
+</div>
+<div class='col fragment'>
+<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/500px-Wikipedia-logo-v2.svg.png' style='max-width:250px;'>
+</div>
+<div class='col fragment'>
+<img src="https://vignette.wikia.nocookie.net/logopedia/images/c/cd/Reddit_2017_%28Stacked%29.svg/revision/latest/scale-to-width-down/709?cb=20190502124341" style='max-width:250px;'/>
+</div>
+</div>
 
 ## Dad Joke
 
@@ -30,15 +40,15 @@ source("resources/preamble.R")
 
 > - He couldn't see that well!
 
+## Introductions
+> - Try breakout rooms
+- Name
+- Year
+- Major
+- What you hope to get from this class
+
 # The Class
 
-## Goals
-
-> - Understand the role of narrative in interpreting and producing data analyses
-> - Competently import, process, and prepare data for analysis in R
-> - Produce beautiful, truthful visualizations in R
-> - Critically analyze data visualizations and presentations
-> - Craft compelling data presentations
 
 ## Why learn data storytelling skills?
 
@@ -49,11 +59,11 @@ This is Ignaz Semmelweis.
 
 Austrian physician working as an OB in the 1840s.
 
-2 clinics - one run by drs the other by nurses. Women begged to be admitted to the nurse-run facility.
+2 clinics - one run by Drs the other by nurses. Women begged to be admitted to the nurse-run facility.
 
-Childbed fever ran rampant in the dr clinic - about 10% of women who gave birth there died
+Childbed fever ran rampant in the Dr clinic - about 10% of women who gave birth there died
 
-Another Dr. in the hospital and Semmelweis's friend Jakob Kolletschka was poked with a scalpel while helping a student perform an autopsy. Semmelweis realized that was the difference - the drs. performed autopsies, and something from the cadavers was making women sick. He instituted handwashing with chlorinated lime, and deaths plummeted.
+Another Dr. in the hospital and Semmelweis's friend Jakob Kolletschka was poked with a scalpel while helping a student perform an autopsy. Semmelweis realized that was the difference - the Drs. performed autopsies, and something from the cadavers was making women sick. He instituted handwashing with chlorinated lime, and deaths plummeted.
 
 He spent the rest of his life trying to convince others of the value of handwashing in increasingly desperate ways and eventually died in an insane asylum.
 </aside>
@@ -82,12 +92,20 @@ I'm not saying that this class will help you to avoid dying alone, but I'm also 
 
 </aside>
 
+## Goals
+
+> - Understand the role of narrative in interpreting and producing data analyses
+> - Competently import, process, and prepare data for analysis in R
+> - Produce beautiful, truthful visualizations in R
+> - Critically analyze data visualizations and presentations
+> - Craft compelling data presentations
+
 ## About the class
 
 > - Building a learning community
 > - Discussions vs. lectures
 > - Resolving confusion
-> - Applications
+> - Project-based
 
 
 ## Discord Meetings
@@ -100,12 +118,32 @@ I'm not saying that this class will help you to avoid dying alone, but I'm also 
 > - Think, pair, share
 
 ## Grading
+>- Normal grading has some negative unintended consequences
+<div class='container'>
+<div class='col'>
+<img class='fragment' src='./images/discussion.jpg' style='max-width:450px;'/>
+</div>
+</div>
+>- How can we build a learning community?
 
-> - Self-assessment
->	- What are your goals?
-> - I will track your progress and provide feedback
-> - Four times you will discuss your progress and suggest the grade you are earning
->	- I will let you know when/if I disagree
+## Grading
+>- I'm interested in teaching, not assessing
+> - Goal is to build in assessments that encourage learning and accountability
+>- Assignments will be turned in on Brightspace and/or discussed in class
+>- I will provide feedback
+>- 4 times during the semester you will turn in reflection pieces
+>- If I disagree I will reach out
+
+## Dangers of this approach to grading
+
+## Assignments
+
+> - Homework
+>	- Programming assignments
+>	- Data story projects
+> - Reading
+> - Participation
+>	- In class responses
 
 ## R
 
@@ -154,3 +192,7 @@ I'm not saying that this class will help you to avoid dying alone, but I'm also 
 > - On Discord
 >	- 1-to-1 meetings on Friday 10-12
 >	- Sign up on the wiki
+
+## Please be vocal
+>- I will solicit feedback as part of reflections
+>- Let me know what is and isn't working

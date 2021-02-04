@@ -1,0 +1,46 @@
+---
+title: Counterfactuals and Data Stories
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ./resources/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+```
+
+## What is a counterfactual?
+
+> - Concept comes from logic and philosophy
+> - Simple version:
+>	- Conditional sentences that discuss what would have been true under different circumstances
+> - Examples:
+>	- If Kennedy hadn't been killed, then the Civil Rights Act wouldn't have passed
+>	- If we hadn't released this new ad, then sales wouldn't have increased
+
+
+## Counterfactuals and storytelling
+
+> - Goal of a data story is to identify a causal connection in the world
+> - Counterfactual thinking can help us to identify reasons that connection might not really exist
+> - Look for evidence of alternative explanations
+>	- Analyses
+>	- Experiments
+
+## Example
+
+> - If we hadn't released this new ad, then sales wouldn't have increased
+> - Counterfactual alternatives:
+>	- Sales increased because of organic interest on social media
+>	- Sales increased because of a change in where stores put the product on shelves
+>	- Sales increased because of a change to the packaging
+> - Addressing counterfactuals
+>	- Show that social media increased after the ad came out, and in response to the ad

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Welcome to TDIS!</title>
+  <title>Counterfactuals and Data Stories</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -448,201 +448,53 @@ document.getElementsByTagName('head')[0].appendChild(style);
   <div class="reveal">
     <div class="slides">
 
+<section>
+    <h1 class="title">Counterfactuals and Data Stories</h1>
+</section>
 
-<section><section id="welcome-to-com-49567-turning-data-into-insight-and-stories" class="title-slide slide level1"><h1>Welcome to COM 495/6/7: Turning Data into Insight and Stories</h1></section><section id="about-me" class="slide level2">
-<h2>About Me</h2>
-<div class="container">
-<div class="col fragment">
-<p><img src='images/the_fam.jpg'></p>
-</div>
-<div class="col fragment">
-<p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/500px-Wikipedia-logo-v2.svg.png' style='max-width:250px;'></p>
-</div>
-<div class="col fragment">
-<p><img src="https://vignette.wikia.nocookie.net/logopedia/images/c/cd/Reddit_2017_%28Stacked%29.svg/revision/latest/scale-to-width-down/709?cb=20190502124341" style='max-width:250px;'/></p>
-</div>
-</div>
-</section><section id="dad-joke" class="slide level2">
-<h2>Dad Joke</h2>
+<section id="what-is-a-counterfactual" class="slide level2">
+<h2>What is a counterfactual?</h2>
 <ul>
-<li>Why did the nearsighted man fall in the well?</li>
-</ul>
+<li class="fragment">Concept comes from logic and philosophy</li>
+<li class="fragment">Simple version:
 <ul>
-<li class="fragment">He couldn’t see that well!</li>
-</ul>
-</section><section id="introductions" class="slide level2">
-<h2>Introductions</h2>
-<ul>
-<li class="fragment">Try breakout rooms</li>
-<li class="fragment">Name</li>
-<li class="fragment">Year</li>
-<li class="fragment">Major</li>
-<li class="fragment">What you hope to get from this class</li>
-</ul>
-</section></section>
-<section><section id="the-class" class="title-slide slide level1"><h1>The Class</h1></section><section id="why-learn-data-storytelling-skills" class="slide level2">
-<h2>Why learn data storytelling skills?</h2>
-<p><img class = 'fragment' src='https://upload.wikimedia.org/wikipedia/commons/f/f8/Ignaz_Semmelweis_1860.jpg' style = 'width:50%;' /></p>
-<aside class="notes">
-<p>This is Ignaz Semmelweis.</p>
-<p>Austrian physician working as an OB in the 1840s.</p>
-<p>2 clinics - one run by Drs the other by nurses. Women begged to be admitted to the nurse-run facility.</p>
-<p>Childbed fever ran rampant in the Dr clinic - about 10% of women who gave birth there died</p>
-<p>Another Dr. in the hospital and Semmelweis’s friend Jakob Kolletschka was poked with a scalpel while helping a student perform an autopsy. Semmelweis realized that was the difference - the Drs. performed autopsies, and something from the cadavers was making women sick. He instituted handwashing with chlorinated lime, and deaths plummeted.</p>
-He spent the rest of his life trying to convince others of the value of handwashing in increasingly desperate ways and eventually died in an insane asylum.
-</aside>
-</section><section id="lots-of-reasons-semmelweiss-findings-were-not-accepted" class="slide level2">
-<h2>Lots of reasons Semmelweis’s findings were not accepted</h2>
-<ul>
-<li class="fragment">No real theory of how “corpse particles” actually caused disease</li>
-<li class="fragment">Didn’t fit in the “paradigm” of understanding</li>
-<li class="fragment">Doctors had to accept that they were the cause of thousands of deaths</li>
-</ul>
-</section><section id="but-he-was-also-a-bad-data-storyteller" class="slide level2">
-<h2>But he was also a bad data storyteller</h2>
-<p><img class = 'fragment' src='images/semmelweis_table.jpg' style='width:60%;'/></p>
-</section><section id="data-does-not-speak-for-itself" class="slide level2">
-<h2>Data does not speak for itself</h2>
-<p><img class = 'fragment' src='images/dykes_figure.png' style='width:80%;'/></p>
-<div class="footnote">
-Image via <a href="https://www.forbes.com/sites/brentdykes/2016/02/09/a-history-lesson-on-the-dangers-of-letting-data-speak-for-itself/?sh=6bbd7d9720e1">Brent Dykes</a>
-</div>
-<aside class="notes">
-<p>I’m not saying that this class will help you to avoid dying alone, but I’m also not <em>not</em> saying that</p>
-</aside>
-</section><section id="goals" class="slide level2">
-<h2>Goals</h2>
-<ul>
-<li class="fragment">Understand the role of narrative in interpreting and producing data analyses</li>
-<li class="fragment">Competently import, process, and prepare data for analysis in R</li>
-<li class="fragment">Produce beautiful, truthful visualizations in R</li>
-<li class="fragment">Critically analyze data visualizations and presentations</li>
-<li class="fragment">Craft compelling data presentations</li>
-</ul>
-</section><section id="about-the-class" class="slide level2">
-<h2>About the class</h2>
-<ul>
-<li class="fragment">Building a learning community</li>
-<li class="fragment">Discussions vs. lectures</li>
-<li class="fragment">Resolving confusion</li>
-<li class="fragment">Project-based</li>
-</ul>
-</section><section id="discord-meetings" class="slide level2">
-<h2>Discord Meetings</h2>
-<ul>
-<li class="fragment">Tuesdays are “required”</li>
-<li class="fragment">Thursdays are typically more of a co-working time (but sometimes synchronous)</li>
-<li class="fragment">Discussion questions due on Mondays (in Discord)</li>
-<li class="fragment">Random cold calling based on questions
-<ul>
-<li class="fragment">I will track whether you are prepared</li>
+<li class="fragment">Conditional sentences that discuss what would have been true under different circumstances</li>
 </ul></li>
-<li class="fragment">Think, pair, share</li>
-</ul>
-</section><section id="grading" class="slide level2">
-<h2>Grading</h2>
+<li class="fragment">Examples:
 <ul>
-<li class="fragment">Normal grading has some negative unintended consequences
-<div class="container">
-<div class="col">
-<p><img class='fragment' src='images/discussion.jpg' style='max-width:450px;'/></p>
-</div>
-</div></li>
-<li class="fragment">How can we build a learning community?</li>
-</ul>
-</section><section id="grading-1" class="slide level2">
-<h2>Grading</h2>
-<ul>
-<li class="fragment">I’m interested in teaching, not assessing</li>
-<li class="fragment">Goal is to build in assessments that encourage learning and accountability</li>
-<li class="fragment">Assignments will be turned in on Brightspace and/or discussed in class</li>
-<li class="fragment">I will provide feedback</li>
-<li class="fragment">4 times during the semester you will turn in reflection pieces</li>
-<li class="fragment">If I disagree I will reach out</li>
-</ul>
-</section><section id="dangers-of-this-approach-to-grading" class="slide level2">
-<h2>Dangers of this approach to grading</h2>
-</section><section id="assignments" class="slide level2">
-<h2>Assignments</h2>
-<ul>
-<li class="fragment">Homework
-<ul>
-<li class="fragment">Programming assignments</li>
-<li class="fragment">Data story projects</li>
-</ul></li>
-<li class="fragment">Reading</li>
-<li class="fragment">Participation
-<ul>
-<li class="fragment">In class responses</li>
+<li class="fragment">If Kennedy hadn’t been killed, then the Civil Rights Act wouldn’t have passed</li>
+<li class="fragment">If we hadn’t released this new ad, then sales wouldn’t have increased</li>
 </ul></li>
 </ul>
-</section><section id="r" class="slide level2">
-<h2>R</h2>
+</section>
+<section id="counterfactuals-and-storytelling" class="slide level2">
+<h2>Counterfactuals and storytelling</h2>
 <ul>
-<li class="fragment">For much of the class, homework will be R assignments instead of discussion questions</li>
-<li class="fragment">Tuesday classes will review homework questions and confusions, Thursdays will be co-working</li>
-<li class="fragment">Please ask and answer questions in Discord!</li>
-</ul>
-</section><section id="exam" class="slide level2">
-<h2>Exam</h2>
+<li class="fragment">Goal of a data story is to identify a causal connection in the world</li>
+<li class="fragment">Counterfactual thinking can help us to identify reasons that connection might not really exist</li>
+<li class="fragment">Look for evidence of alternative explanations
 <ul>
-<li class="fragment">One exam
-<ul>
-<li class="fragment">Goal is to encourage self-accountability</li>
+<li class="fragment">Analyses</li>
+<li class="fragment">Experiments</li>
 </ul></li>
 </ul>
-</section><section id="final-project" class="slide level2">
-<h2>Final Project</h2>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
 <ul>
-<li class="fragment">Data presentation</li>
-</ul>
-</section><section id="project-milestones" class="slide level2">
-<h2>Project Milestones</h2>
+<li class="fragment">If we hadn’t released this new ad, then sales wouldn’t have increased</li>
+<li class="fragment">Counterfactual alternatives:
 <ul>
-<li class="fragment">Identify dataset</li>
-<li class="fragment">Proposal</li>
-<li class="fragment">Rough draft</li>
-<li class="fragment">Each stage includes a round of peer feedback</li>
-</ul>
-</section></section>
-<section><section id="resources" class="title-slide slide level1"><h1>Resources</h1></section><section id="discord" class="slide level2">
-<h2>Discord</h2>
+<li class="fragment">Sales increased because of organic interest on social media</li>
+<li class="fragment">Sales increased because of a change in where stores put the product on shelves</li>
+<li class="fragment">Sales increased because of a change to the packaging</li>
+</ul></li>
+<li class="fragment">Addressing counterfactuals
 <ul>
-<li class="fragment">Conversation</li>
-<li class="fragment">Class sessions</li>
-<li class="fragment">Help
-<ul>
-<li class="fragment">In general, ask publicly so others can answer / see the answer</li>
+<li class="fragment">Show that social media increased after the ad came out, and in response to the ad</li>
 </ul></li>
 </ul>
-</section><section id="wiki" class="slide level2">
-<h2>Wiki</h2>
-<ul>
-<li class="fragment">Schedule</li>
-<li class="fragment">Links to readings</li>
-</ul>
-</section><section id="brightspace" class="slide level2">
-<h2>Brightspace</h2>
-<ul>
-<li class="fragment">Readings</li>
-<li class="fragment">Submit some assignments</li>
-</ul>
-</section><section id="office-hours" class="slide level2">
-<h2>Office Hours</h2>
-<ul>
-<li class="fragment">On Discord
-<ul>
-<li class="fragment">1-to-1 meetings on Friday 10-12</li>
-<li class="fragment">Sign up on the wiki</li>
-</ul></li>
-</ul>
-</section><section id="please-be-vocal" class="slide level2">
-<h2>Please be vocal</h2>
-<ul>
-<li class="fragment">I will solicit feedback as part of reflections</li>
-<li class="fragment">Let me know what is and isn’t working</li>
-</ul>
-</section></section>
+</section>
     </div>
   </div>
 
