@@ -1,0 +1,70 @@
+---
+title: "COM 495: Importing and Cleaning Data"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ./resources/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+```
+
+## Goals
+
+> - Main data formats
+> - Principles for data "wrangling"
+> - Intro to tools
+
+
+## Data often wasn't created for you!
+
+> - Across multiple tables
+<div class='fragment'>
+|user| visit_time | length_of_visit |
+|----|------------|-----------------|
+| A  | 2021-02-03 3:00| 40 |
+
+|user| visit_time | page_visited |
+|----|----------|-------------|
+| A  |  2021-02-03 3:00 | Purdue University |
+
+</div>
+> - "Wide" instead of long
+
+| user| 2021-01 visits | 2020-12 visits | 2020-11 visits |
+|----|----|----|----|
+| A | 4 | 3 | 1|
+
+## Principles
+
+> - Typically, R expects a "tidy" format
+> - Each variable is a column and each row is an observation
+
+## Nick Huntington-Klein's principles for data wrangling
+
+> - Always look directly at the data
+> - Think about what you want your data to look like
+> - Think about how to take information from where it is and put it where you want it
+> - After every step, look at the data to make sure it's doing what you want it to
+
+
+
+## Dad Joke
+
+My date was supposed meet me at the gym but they didn't show up.
+
+That's when I knew we weren't going to work out.
+
+## Housekeeping
+
+> - Self assessment reflection due
+> - Watch video for this week
+> - R starts in 2 weeks

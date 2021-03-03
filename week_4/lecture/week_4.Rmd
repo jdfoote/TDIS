@@ -1,5 +1,5 @@
 ---
-title: "COM 495: Week 3"
+title: "COM 495: Week 4"
 output: 
   revealjs::revealjs_presentation:
     theme: white
@@ -19,16 +19,12 @@ source("resources/preamble.R")
 
 ## Dad Joke
 
-I got fired from my job at the calendar factory.
+My date was supposed meet me at the gym but they didn't show up.
 
-Just because I took a day off.
-
+That's when I knew we weren't going to work out.
 
 ## Housekeeping
 
-> - Case study next week
->	- No discussion questions
-> - Self assessment reflection
->	- Goals for the class
->	- Feedback for me
-> - More videos from me
+> - Self assessment reflection due
+> - Watch video for this week
+> - R starts in 2 weeks

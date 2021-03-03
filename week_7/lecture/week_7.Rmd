@@ -1,0 +1,35 @@
+---
+title: Week 5
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ./resources/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+```
+
+## Dad Joke
+
+It's weird that we call childbirth delivery.
+
+<p class='fragment'>
+We should call it takeout instead.
+</p>
+
+
+## Housekeeping
+
+> - Self Assessment Reflection
+> - Exam or project?
+> - Chapter 5 exercises due in 2 weeks
+>	- Go over ~2/3 next week
+> - How did R Markdown work?

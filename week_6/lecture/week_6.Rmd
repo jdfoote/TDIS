@@ -1,0 +1,46 @@
+---
+title: Week 5
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ./resources/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+```
+
+## Dad Joke
+My landlord texted saying we need to meet up and talk about how high my heating bill is.
+
+<p class='fragment'>
+I replied back: “Sure, my door is always open.”
+</p>
+
+
+## Housekeeping
+
+> - Plan to use Thursday sessions
+> - R starts this week
+>	- So far things have been pretty chill
+>	- That changes now :)
+> - A few weeks of R bootcamp
+>	- Lots of questions from R4DS
+>	- Work through as many as you can
+>	- Try on your own first
+>	- Ask for help
+>	- Post code surrounded by three backticks (\`) before and after
+
+
+## You got this
+
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@angryreactions/video/6922551331362295045" data-video-id="6922551331362295045" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@angryreactions" href="https://www.tiktok.com/@angryreactions">@angryreactions</a> <p>This is for you ❤️</p> <a target="_blank" title="♬ original sound - favsoundds " href="https://www.tiktok.com/music/original-sound-6734428224224299782">♬ original sound - favsoundds </a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+
+

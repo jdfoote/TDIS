@@ -1,0 +1,208 @@
+---
+title: "Basic Debugging"
+author: "Jeremy Foote"
+date: "3/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(nycflights13)
+```
+
+Computer "bugs" enter code because people have a hard time communicating with computers. If we were giving instructions to a person, then they would use their best judgment to correct for any small errors or ambiguities. Computers, on the other hand, follow instructions exactly.
+
+Sometimes these bugs will be bad enough that a program just doesn't know what to do and won't run. In these cases, the program will quit and will display an error message (also called "throwing" an error). 
+
+More dangerously, a program will run but it won't quite be doing what we want or expect it to do.
+
+The process of finding bugs is called quality assurance or testing, and the process of figuring out what part of the code is causing the bug and fixing it is called "deubgging".
+
+In this quick tutorial, I'm going to teach you a few basic principles of debugging and writing code that makes bugs easier to find. I'll be using the `tidyverse` in R, which is designed to be readable and easier to understand.
+
+## Syntax bugs
+
+Some of the most common bugs for new programmers are syntax bugs. Programming syntax is confusing and complicated, and just like learning a new human langauge it takes practice before it becomes natural.
+
+The syntax errors that I find most common are: missing commas, missing parentheses/brackets, and problems with nested parentheses.
+
+### Commas
+
+See if you can spot the problem with this code:
+
+```{r, eval = F}
+values <- 1:50
+sample(values,
+       size = 20
+       replace = TRUE
+       )
+```
+
+When we run it, R gives us a somewhat confusing message - that there is an "unexpected symbol". It does give us a clue of where to look for the problem, but the issue is not an extra symbol, it's actually a missing symbol - we need a comma after setting the `size` parameter to `20`.
+
+### Missing parentheses
+
+Find the bug:
+```{r, eval = F}
+
+mpg %>% 
+  ggplot() + geom_point(aes(y = hwy, x = displ) + theme_minimal()
+
+```
+
+Here, R is more helpful and identifies this as an incomplete expression.
+
+### Nested parentheses problems
+
+Other than just missing parentheses, nested parentheses can cause some other bugs. This code is supposed to plot half of the difference between highway and city mileage on the y axis.
+
+```{r, eval=F}
+mpg %>% 
+  ggplot(aes(y = (hwy - cty)/2), x = cty) + geom_point() + theme_minimal() + geom_smooth()
+  
+```
+This time, the error message is only helpful with some detective work. It is telling us that `stat_smooth` which is invisibly called by `geom_smooth` is missing the `x` aesthetic. This gives us a hint that the problem has to do with how the `x` gets set. Indeed, if you look carefully, there is a misplaced ending parenthesis, and `x` is outside of the `aes()`.
+
+Here's a fixed version:
+
+```{r}
+mpg %>% 
+  ggplot(aes(y = (hwy - cty)/2, x = cty)) + geom_point() + theme_minimal() + geom_smooth()
+  
+```
+
+One strategy for finding and avoiding these problems is to put arguments on new lines. Here is the same bug, this time with better spacing.
+
+If you are using RStudio, then pressing `Enter` will create a new line and will indent the next line to the right place - if it indents it somewhere else (as below) then this can help to find bugs.
+
+```{r, eval = F}
+mpg %>% 
+  ggplot(
+    aes(
+      y = (hwy - cty)/2), 
+    x = cty) + 
+  geom_point() + 
+  theme_minimal() + 
+  geom_smooth()
+```
+
+If we had written it correctly, then it would have indented like this.
+
+```{r}
+mpg %>% 
+  ggplot(
+    aes(
+      y = (hwy - cty)/2, 
+      x = cty
+      )
+    ) + 
+  geom_point() + 
+  theme_minimal() + 
+  geom_smooth()
+```
+
+Note how when you put your cursor next to any parenthesis, it shows the matching parenthesis. This is also a good strategy for finding bugs.
+
+
+## Data Bugs
+
+The other major type of bugs that I want to touch on I'm calling "Data Bugs". These are bugs where the data that you have is not what you think it is. This can happen in a lot of ways. Here are a few of the most common.
+
+### Misunderstanding of variables
+
+Sometimes we may be using a dataset that we just don't understand. In R for Data Science [Chapter 5](https://r4ds.had.co.nz/transform.html) the authors use the `nycflights` data set. When introducing `mutate`, we might assume that `air_time` for a flight is equal to `arr_time` - `dep_time`, but it isn't.
+
+```{r}
+flights %>%
+  mutate(arr_dep_diff = arr_time - dep_time) %>%
+  ggplot(aes(y = air_time, x = arr_dep_diff)) +
+  geom_point()
+```
+The first problem we see is that sometimes arrival - departure is negative! How is that possible? Well, `arr_time` and `dep_time` are times (represented as integers), so if a flight could leave at 11:00 pm (2300) and arrive at 3 am (300), leaving a negative number.
+
+More than that, however, there are some other issues. Most obviously, you can't subtract times and get minutes. 5:30 - 3:30 is 120 minutes, but if we naively subtract 530 - 330 we get 200. In other words, the format of the data does not match the operation that we want.
+
+Also, there are time zones to consider - the `arr_time` and `dep_time` are in local times.
+
+Finally, `air_time` may just include the time actually in the air, while `dep_time` and `arr_time` might include taxiing. If we don't fix each of these issues, then we could make errors in interpretation.
+
+There are a few strategies for avoiding these kinds of bugs. The first is to read the documentation about the variables, if it exists, to figure out what they are measuring. The second is to look at the data - look at the data frames, plot the histograms for each variable, etc.
+
+Some tools for doing this:
+
+```{r}
+head(flights)
+```
+
+```{r}
+summary(flights)
+```
+
+
+
+```{r}
+
+flights %>%
+  na.omit() %>%
+  keep(is.numeric) %>% 
+  gather() %>% 
+  ggplot(aes(value)) +
+    facet_wrap(~ key, scales = "free") +
+    geom_density()
+```
+
+
+### Bad transformations
+
+The second big class of bugs is where we are doing something to the data, but not doing what we think we are. Sometimes this is a simple as a typo.
+
+For example, say we wanted to plot the number of flights per day to Indianapolis.
+
+```{r}
+flights %>%
+  filter(dest == "IND") %>% # Just get IND flights
+  mutate(datetime = year + month + day) %>% # Calculate a datetime by combining year, month, and day
+  group_by(datetime) %>% # Group flights by datetime
+  mutate(count = n()) %>% # Count the number of flights each day
+  ggplot(aes(y = count, x = datetime)) +
+  geom_line()
+```
+
+This seems just fine until we look at the plot! Why does this go until 2060?
+
+Aha! We were trying to combine year, month, and day into a datetime, but R just treated them as numbers and added them together.
+
+The best way to do this is to actually use something like `lubridate` to make this into a `date` object.
+
+```{r}
+library(lubridate)
+
+flights %>%
+  filter(dest == "IND") %>% # Just get IND flights
+  mutate(datetime = make_date(year, month, day)) %>% # Calculate a datetime by combining year, month, and day
+  group_by(datetime) %>% # Group flights by datetime
+  mutate(count = n()) %>% # Count the number of flights each day
+  ggplot(aes(y = count, x = datetime)) +
+  geom_line() +
+  theme_minimal()
+```
+
+To avoid problems with this kind of bug, you can follow Nick Huntington-Klein's principles for data wrangling
+
+- Always look directly at the data
+- Think about what you want your data to look like
+- Think about how to take information from where it is and put it where you want it
+- After every step, look at the data to make sure it's doing what you want it to
+
+The `tidyverse` makes this last step very easy - you can simply remove the pipe (`%>%`) after a line and run the code, and it will show you the output up to that line.
+
+For example, we can just check that our datetimes work:
+```{r}
+flights %>%
+  filter(dest == "IND") %>% # Just get IND flights
+  mutate(datetime = make_date(year, month, day)) # Calculate a date by combining year, month, and day
+```
+
+
+

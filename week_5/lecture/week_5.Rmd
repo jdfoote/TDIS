@@ -70,5 +70,52 @@ source("resources/preamble.R")
 > - Understand the limits of what data can and can't tell you
 > - Think about whether the data gathering process could be influencing results
 
+# Class Session
 
+## Dad Joke
 
+I accidentally swallowed a bunch of Scrabble tiles.
+
+<div class='fragment'>
+My next trip to the bathroom could spell disaster
+</div>
+
+## Self Reflections
+
+> - Thank you so much for being open and honest!
+> - Some summary thoughts
+> - Overall, things are going pretty well
+> - Lots of people want to engage more in class
+>	- Goal of discussions is not to hear answers - it's to gain understanding
+>	- Expressing confusion and asking questions is often better for learning
+> - People are working together outside of class
+>	- Move some of this to Discord?
+
+## Anonymous Feedback
+
+> - People like our discussions
+> - People like the readings
+> - Possible changes
+>	- More lectures and less readings
+>	- Better plan for notes
+
+## Housekeeping
+
+> - R starts this week
+>	- Main goal is to get your computer set up
+>	- And start to get a grasp of the basics
+>	- Two videos - one for the lab, one more abstract
+> - Homework Review instead of discussions
+>	- Next week let's also do a summarization session
+>	- I will put together categories
+
+## Today
+
+> - Try doing a discussion / summarization in breakout rooms
+>	- Identify 3-4 important ideas for goals of the class
+>	- Write on the shared doc
+> - Room 1: Lecture
+> - Room 2: Measurement of Constructs
+> - Room 3: Dirty Data + Data transparency
+> - Room 4: Salganik
+> - Room 5: EDS Ch. 5
